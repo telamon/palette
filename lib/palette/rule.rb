@@ -33,11 +33,11 @@ module Palette
 
       @gui ||= "none"
 
-      output << %{gui=#{gui.upcase}}
+      output << %{gui=#{gui.to_s.upcase}}
       if gui =~ /italic/
         output << %{cterm=NONE}
       else
-        output << %{cterm=#{gui.upcase}}
+        output << %{cterm=#{gui.to_s.upcase}}
       end
 
       output.join(" ").strip
